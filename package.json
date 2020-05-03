@@ -38,7 +38,11 @@
   "keywords": [],
   "license": "MIT",
   "devDependencies": {
-    "@itsjonq/zero": "4.1.9"
+    "@itsjonq/zero": "4.1.9",
+    "@testing-library/jest-dom": "5.5.0",
+    "@testing-library/react": "10.0.4",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
   },
   "publishConfig": {
     "access": "public"
