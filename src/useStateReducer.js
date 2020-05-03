@@ -8,7 +8,7 @@ export function useStateReducer(
 	initialState,
 	stateReducers = [defaultStateReducer],
 ) {
-	const combinedReducers = combineStateReducers(stateReducers);
+	const combinedReducers = combineStateReducers([stateReducers]);
 
 	const reducer = useRef((state, action) => {
 		let nextState = { ...state };
