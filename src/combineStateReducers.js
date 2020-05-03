@@ -1,5 +1,5 @@
 export function combineStateReducers(...fns) {
-	const reducers = fns.flat(Infinity);
+	const reducers = [fns].flat(Infinity);
 
 	return (...args) => {
 		return reducers.reduceRight((state, fn) => {
