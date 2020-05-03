@@ -1,21 +1,11 @@
 import { useRef, useReducer } from 'react';
 import { combineStateReducers } from './combineStateReducers';
 
-const defaultStateReducer = state => state;
-
-export function useStateReducer(
-	initialReducer,
-	initialState,
-	stateReducers = [defaultStateReducer],
-) {
+export function useStateReducer(initialReducer, initialState, stateReducers) {
 	const combinedReducers = combineStateReducers([stateReducers]);
 
 	const reducer = useRef((state, action) => {
-		let nextState = { ...state };
-		nextState = initialReducer(nextState, action);
-		nextState = combinedReducers(nextState, action);
-
-		return nextState;
+		return combinedReducers(initialReducer({ ...state }, action), action);
 	}).current;
 
 	return useReducer(reducer, initialState);
