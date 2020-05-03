@@ -1,7 +1,7 @@
 {
   "name": "use-state-reducer",
   "version": "0.0.3",
-  "description": "Module generated with Zero",
+  "description": "Hook for state reducers",
   "main": "dist/cjs/index.js",
   "module": "dist/es/index.js",
   "sideEffects": false,
